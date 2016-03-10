@@ -10,9 +10,11 @@ public class movement : MonoBehaviour {
     private bool run;
     public Animator ab;
     public bool jump;
+    
     // Use this for initialization
     void Start () {
         run = false;
+        jump = false;
         ab = GetComponent<Animator>();
 	}
 	
@@ -27,16 +29,24 @@ public class movement : MonoBehaviour {
         if (Input.GetKey(KeyCode.W))
         {
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                abc.AddForce(0, 300, 0);
+                ab.SetBool("jump", true);
+            }
+            else {
+                ab.SetBool("jump", false);
+            }
 
             if (run)
             {
-                transform.position += transform.forward * Time.deltaTime * movementSpeed ;
+                transform.position += transform.forward * Time.deltaTime * movementSpeed * 0.5f;
                 
                 ab.Play("RUN00_F");
             }
             else
             {
-                transform.position += transform.forward * Time.deltaTime * movementSpeed * 0.5f;
+                transform.position += transform.forward * Time.deltaTime * movementSpeed * 0.1f;
             
                 ab.Play("WALK00_F");
             }
@@ -44,9 +54,18 @@ public class movement : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.forward * Time.deltaTime * movementSpeed;
+            transform.position -= transform.forward * Time.deltaTime * movementSpeed * 0.1f;
             ab.Play("WALK00_B");
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            abc.AddForce(0, 300, 0);
+            ab.SetBool("jump", true);
+        }
+        else {
+            ab.SetBool("jump", false);
+        }
+
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.up * rorateSpeed * Time.deltaTime * 2);
@@ -56,14 +75,7 @@ public class movement : MonoBehaviour {
             transform.Rotate(Vector3.down * rorateSpeed * Time.deltaTime * 2);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            abc.AddForce(0, 300, 0);
-            ab.SetBool("jump", true);
-        }
-        else {
-            ab.SetBool("jump", false);
-        }
+        
 
     }
 }
