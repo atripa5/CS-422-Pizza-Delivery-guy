@@ -1,7 +1,0 @@
-
-Schedules and Deliverables:
- 
- 
-    - Create a timer for the game to take note of the time -- Thu 03/10 by 5pm (4 hours)
-    - Create a UI element to collect points.               -- Thu 03/10 by midnight (3 hours)
-    - Create a way to pick the pizza.                      -- Fri by 10 am (3 hours)

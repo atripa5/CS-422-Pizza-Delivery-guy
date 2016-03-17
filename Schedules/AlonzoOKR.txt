@@ -1,6 +1,0 @@
-Schedule and deliverables
-
-Create simple 4x4 city grid --- by thursday Midnight (5hrs)
-create character --- by thrusday night (2hrs
-create obsticles --- by thursday night (2hrs)
-

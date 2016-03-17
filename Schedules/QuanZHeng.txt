@@ -1,5 +1,0 @@
-
-Schedules and Deliverables:
- 
- 
-    - Create a deliverable pizza action for the character.               -- Thu 03/10 by midnight (3 hours)
